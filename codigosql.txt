@@ -1,0 +1,27 @@
+#codigos SQL usados para criar as tabelas 
+
+#tabela livro
+CREATE TABLE livro(
+nome VARCHAR(50) UNIQUE,
+autor VARCHAR (50),
+genero VARCHAR (50),
+cod INT PRIMARY KEY 
+);
+
+#Tabela emprestimo 
+CREATE TABLE emprestimo(
+nome_livro VARCHAR (50),
+nome_cliente VARCHAR (50),
+data_inicial VARCHAR (50),
+data_final VARCHAR (50)
+CONSTRAINT fk_emprestimo FOREIGN KEY (nome_livro) REFERENCES livro(nome)
+);
+
+#tabela usuario
+CREATE TABLE usuario(
+nome VARCHAR (50),
+username VARCHAR(50),
+senha VARCHAR (5)
+);
+
+
